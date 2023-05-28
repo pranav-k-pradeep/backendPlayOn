@@ -1,4 +1,7 @@
 package com.pranav.spring.boot.backend.user;
 
-public interface UserRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByEmail(String email);
 }
